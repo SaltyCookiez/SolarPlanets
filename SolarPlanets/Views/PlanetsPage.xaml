@@ -91,22 +91,55 @@
 
             </VerticalStackLayout>
 
-        </Grid>
+            <!--Api main Picture-->
+           
+            <Border
+                WidthRequest="56"
+                HeightRequest="56"
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                Stroke="{StaticResource LightBorderColor}"
+                StrokeThickness="6"
+                Grid.Row="0"
+                Grid.Column="1">
 
-        <!--Main Content ScrollView-->
-        <ScrollView
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="28"/>
+                </Border.StrokeShape>
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ProfilePicture_Clicked" />
+                </Border.GestureRecognizers>
+
+                <Image
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    Source="planet.png">
+                    <Image.Clip>
+                        <EllipseGeometry
+                            Center="25,25"
+                            RadiusX="25"
+                            RadiusY="25" />
+                    </Image.Clip>
+                </Image>
+            </Border>
+            
+            <!--Main Content ScrollView-->
+            <ScrollView
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalScrollBarVisibility="Never"
             VerticalScrollBarVisibility="Never"
             Margin="0,32,-24,0">
-
-            <VerticalStackLayout
+                
+                <VerticalStackLayout
                 Spacing="12">
-
-                <!--Search Box-->
-                <Border
+                    
+                    <!--Search Box-->
+                    <Border
                     Padding="12,4"
                     BackgroundColor="DarkGray"
                     Stroke="{StaticResource BorderColor}"
@@ -114,38 +147,100 @@
                     Margin="0,0,24,0"
                     HeightRequest="48">
 
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="6"/>
-                    </Border.StrokeShape>
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="6"/>
+                        </Border.StrokeShape>
 
-                    <Grid
+                        <Grid
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
                         ColumnDefinitions="Auto,*"
                         ColumnSpacing="16">
 
-                        <Image
+                            <Image
                             WidthRequest="18"
                             HeightRequest="18"
                             Source="imgsearch.png"
                             Grid.Column="0"
                             VerticalOptions="Center" />
 
-                        <Label
+                            <Label
                             Text="Search for your favorite planet"
                             Grid.Column="1"
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
                             Style="{StaticResource MenuLabelStyle}" />
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+            </ScrollView>
+            <Border
+                Padding="16,0"
+                BackgroundColor="#393965"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="0,0,0,20"
+                HeightRequest="90"
+                Grid.Column="0"
+                Grid.ColumnSpan="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45"/>
+                </Border.StrokeShape>
 
-                    </Grid>
+                <Grid
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center"
+                    RowDefinitions="Auto,Auto"
+                    ColumnDefinitions="*,*,*"
+                    RowSpacing="6">
 
-                </Border>
+                    <Image 
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        Source="imgexplore.png"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="Center" />
 
-            </VerticalStackLayout>
+                    <Label 
+                        Text="Explore"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MenuLabelStyle}" />
 
-        </ScrollView>
+                    <Image
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        Source="imgfavorite.png"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="Center" />
 
+                    <Label
+                        Text="Favorite"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="Center" 
+                        Style="{StaticResource MenuLabelStyle}" />
+
+                    <Image
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        Source="imgprofile.png"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Profile"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MenuLabelStyle}" />
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
-
 </ContentPage>

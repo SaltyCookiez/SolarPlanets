@@ -23,4 +23,11 @@ public partial class PlanetsPage : ContentPage
         _ = MainContentGrid.ScaleTo(1, AnimationDuration);
         await MainContentGrid.TranslateTo(0, 0, AnimationDuration, Easing.CubicIn);
     }
+
+    async void ProfilePicture_Clicked(System.Object sender, System.EventArgs e)
+    {
+        _ = MainContentGrid.TranslateTo(-this.Width * 0.5, this.Height * 0.1, AnimationDuration, Easing.CubicIn);
+        await MainContentGrid.ScaleTo(0.8, AnimationDuration);
+        _ = MainContentGrid.FadeTo(0.8, AnimationDuration);
+    }
 }
